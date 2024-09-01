@@ -7,7 +7,17 @@
 
 [![badge](https://img.shields.io/npm/v/sketchbook?style=flat-square)](https://www.npmjs.com/package/sketchbook)
 
-# Final update (20. Feb 2023)
+# September 2024 Update
+
+I plan to use Sketchbook as a basis to develop another project, so I have updated the code to run on the latest version of all the packages and switched from cannon.js, which is no longer maintained, to cannon-es.js. This version should build and run locally using `npm`. 
+
+The biggest change has involved updating to the new version of THREE.js, which no longer supports the object types `Geometry` and `Face3`, replacing both with `BufferGeometry`. If playing around with the code, it is very important to keep in mind that indexed and non-indexed objects of type BufferGeometry behave very differently. The shape of a non-indexed BufferGeometry is fully defined by its vertices. That is *not* the case for an indexed BufferGeometry.
+
+Note that I have also updated the sky shaders to use an example provided on the THREE.js website. I may do the same with the water shaders, which now look very good but are very resource-intensive.
+
+I do not plan to make regular updates to this fork at the moment, but I may do so in the future.
+
+# Original creator final update (20. Feb 2023)
 
 As I have no more interest in developing this project, it comes to a conclusion. In order to remain honest about the true state of the project, I am archiving this repository.
 
@@ -84,6 +94,8 @@ const world = new World('scene.glb');
 -->
 
 ## Contributing
+
+Because the purpose of this fork at the moment is to keep Sketchbook updated to work with the latest versions of its dependencies, I am unlikely to accept contributions that add new content. That may change in the future. Regardless, steps 1-5 below will allow you to get Sketchbook running locally. As to step 6, I will likely only incorporate pull requests to maintain the package right now.
 
 1. Get the LTS version of [Node.js](https://nodejs.org/en/) 16
 2. [Fork this repository](https://help.github.com/en/github/getting-started-with-github/fork-a-repo)
